@@ -35,6 +35,7 @@ class Solution:
         return dic[n]
 
     # Approach 2:
+    # TODO: finsih this
     def minimumrounds_Greedy(bruh, n):
         pass
         # res = 0
