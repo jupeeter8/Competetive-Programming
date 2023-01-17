@@ -5,10 +5,18 @@
 
 def find_duplicate(array, N):
 
-    total = (1 + N) * (N / 2)
+    total = (1 + (N - 1)) * ((N - 1) / 2)
     array_sum = sum(array)
 
-    return int(N - (total - array_sum))
+    return int(array_sum - total)
+
+
+def find_duplicate_xor(array, N):
+    unique = 0
+    for i in range(N):
+        unique = unique ^ array[i]
+        unique = unique ^ i
+    return unique
 
 
 def main():
@@ -16,6 +24,7 @@ def main():
     array = list(map(int, input().split()))
 
     print(find_duplicate(array, N))
+    print(find_duplicate_xor(array, N))
 
 
 main()
