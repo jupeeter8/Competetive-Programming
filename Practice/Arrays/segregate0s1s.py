@@ -12,10 +12,10 @@ class Solution:
         l: int = 0
         h: int = n - 1
 
-        while l < h:
+        while l <= h:
             if array[l] == 0:
                 l += 1
-            if array[l] == 1:
+            else:
                 array[l], array[h] = self.swap(array[l], array[h])
                 h -= 1
         return array
