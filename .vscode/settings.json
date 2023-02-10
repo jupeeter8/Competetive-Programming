@@ -1,6 +1,4 @@
 {
 	"python.formatting.provider": "black",
-	"editor.fontFamily": "'JetBrainsMono Nerd Font Mono','Droid Sans Mono', 'monospace', monospace",
 	"python.analysis.typeCheckingMode": "off",
-	"editor.renderWhitespace": "boundary",
 }
