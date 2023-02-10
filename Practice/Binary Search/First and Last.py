@@ -1,6 +1,32 @@
 from typing import List, Tuple
 
 
+def findStart(arr: List[int], l: int, h: int, key: int) -> int:
+    while l <= h:
+        mid = (l + h) // 2
+        if arr[mid] == key:
+            start = mid
+            h = mid - 1
+        elif arr[mid] < key:
+            l = mid + 1
+        else:
+            h = mid - 1
+    return start
+
+
+def findEnd(arr: List[int], l: int, h: int, key: int) -> int:
+    while l <= h:
+        mid = (l + h) // 2
+        if arr[mid] == key:
+            end = mid
+            l = mid + 1
+        elif arr[mid] < key:
+            l = mid + 1
+        else:
+            h = mid - 1
+    return end
+
+
 def findFirstAndLast(arr: List[int], idx: int, n: int) -> Tuple[int, int]:
     first = idx
     last = idx
@@ -40,11 +66,43 @@ def main():
 
     n = 25
     # make a sorted array of size n with some duplicates
-    arr = [i // 2 for i in range(n)]
+    arr = [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        6,
+        6,
+        7,
+        7,
+        8,
+        8,
+        9,
+        9,
+        10,
+        10,
+        11,
+        11,
+        12,
+    ]
     print(arr)
-    key = 11
+    key = 4
     idx = binarySearch(arr, 0, n - 1, key)
-    print(findFirstAndLast(arr, idx, n))
+    # findFirstAndLast(arr, idx, n)
+    print(findStart(arr, 0, idx, key))
+    print(findEnd(arr, idx, n - 1, key))
 
 
 main()
