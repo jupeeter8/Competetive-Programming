@@ -11,9 +11,12 @@ def findPiviotElement(arr, l, h):
 
 
 def main():
-    # create a sorted rotated array
-    arr = [5, 6, 7, 8, 9, 21, 2, 3]
+    # create a sorted rotated array of 200 elements
+    arr = [i + 1 for i in range(200)]
+    # rorate the array by 35 elements
+    arr = arr[35:] + arr[:35]
     n = len(arr)
+    print(arr)
     print(findPiviotElement(arr, 0, n - 1))
 
 
