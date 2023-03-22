@@ -21,7 +21,7 @@ def rotatedArraySearch(arr, l, h, key):
 
 
 def main():
-    arr = [6, 9, 12, 15, 1, 2, 3, 5]
+    arr = [4, 5, 6, 7, 4, 4, 4, 4, 4]
     pivotIdx = findPivot(arr, 0, len(arr) - 1)
     key = int(input())
     if arr[pivotIdx] <= key <= arr[-1]:
